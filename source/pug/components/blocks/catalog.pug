@@ -1,0 +1,92 @@
+mixin catalog()
+  -
+    const list = [
+      {
+        title: "АКВА - ИС1",
+        image: {
+          src: "catalog-card",
+          format: "png",
+          width: 258,
+          height: 141,
+          alt: ""
+        },
+        description: "Ингибитор осадкообразования (антискалант) для обратного осмоса, ингибитор коррозии"
+      },
+      {
+        title: "АКВА - ИС1",
+        image: {
+          src: "catalog-card",
+          format: "png",
+          width: 258,
+          height: 141,
+          alt: ""
+        },
+        description: "Ингибитор осадкообразования (антискалант) для обратного осмоса, ингибитор коррозии",
+        mod: "blue"
+      },
+      {
+        title: "АКВА - ИС1",
+        image: {
+          src: "catalog-card",
+          format: "png",
+          width: 258,
+          height: 141,
+          alt: ""
+        },
+        description: "Ингибитор осадкообразования (антискалант) для обратного осмоса, ингибитор коррозии"
+      },
+      {
+        title: "АКВА - ИС1",
+        image: {
+          src: "catalog-card",
+          format: "png",
+          width: 258,
+          height: 141,
+          alt: ""
+        },
+        description: "Ингибитор осадкообразования (антискалант) для обратного осмоса, ингибитор коррозии"
+      },
+      {
+        title: "АКВА - ИС1",
+        image: {
+          src: "catalog-card",
+          format: "png",
+          width: 258,
+          height: 141,
+          alt: ""
+        },
+        description: "Ингибитор осадкообразования (антискалант) для обратного осмоса, ингибитор коррозии"
+      }
+    ]
+
+  section.catalog
+    .container
+      .catalog__wrapper
+        h1.catalog__title Каталог реагентов
+        .catalog__form
+          form(method="GET")
+            .catalog__form-wrapper
+              .catalog__input
+                label
+                  input(type="checkbox" name="sedimentation-inhibitors")
+                  span.catalog__icon
+                    +icon("icon-check", 11, 9)
+                  span.catalog__label Ингибиторы осадкообразования (антискаланты)
+              .catalog__input
+                label
+                  input(type="checkbox" name="membrane-flushing-reagents")
+                  span.catalog__icon
+                    +icon("icon-check", 11, 9)
+                  span.catalog__label Реагенты для промывки мембран
+              .catalog__input
+                label
+                  input(type="checkbox" name="membrane-preservation-reagents" checked)
+                  span.catalog__icon
+                    +icon("icon-check", 11, 9)
+                  span.catalog__label Реагенты для консервации мембран
+        .catalog__list
+          each item in list
+            .catalog__item
+              +catalog-card(item)
+        +pagination()
+

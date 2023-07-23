@@ -1,0 +1,8 @@
+mixin catalog-card(data)
+  .catalog-card
+    h2.catalog-card__title!=data.title
+    .catalog-card__image-wrapper
+      +picture("content/", data.image.src, data.image.format, data.image.width, data.image.height, data.image.alt)
+    p.catalog-card__description!=data.description
+    +btn({text: "Выбрать объем", type: "button"})(class=(data.mod ? `btn--${data.mod}` : '')).catalog-card__button.catalog-card__button--desktop
+    +btn({text: "Добавить в запрос", type: "button"})(class=(data.mod ? `btn--${data.mod}` : '')).catalog-card__button.catalog-card__button--mobile
